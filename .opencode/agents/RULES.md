@@ -47,7 +47,7 @@ project-root/
 │   │   └── ConfigLoader.ts   # Reads and validates config from disk or env
 │   └── utils/
 │       └── fileUtils.ts      # File read/write helpers using Bun APIs
-├── AGENT.md                  # This file
+├── RULES.md                  # This file
 ├── package.json
 ├── tsconfig.json
 └── bunfig.toml               # Bun configuration (if applicable)
