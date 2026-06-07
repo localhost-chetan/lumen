@@ -2,7 +2,7 @@
 
 import { isCancel, select } from "@clack/prompts"
 import figlet from "figlet"
-import { cli } from "./modes/cli"
+import { cli } from "@modes/cli"
 
 const main = async () => {
     const banner = figlet.textSync("Lumen", {
