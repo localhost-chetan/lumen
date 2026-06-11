@@ -3,9 +3,7 @@
   "module": "index.ts",
   "private": true,
   "type": "module",
-  "bin": {
-    "lumen": "./src/index.ts"
-  },
+  "bin": "./src/index.ts",
   "scripts": {
     "dev": "bun run --hot ./src/index.ts"
   },
