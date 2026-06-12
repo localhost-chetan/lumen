@@ -4,6 +4,7 @@ import { isCancel, select } from "@clack/prompts"
 import figlet from "figlet"
 import { cli } from "@modes/cli"
 import chalk from "chalk"
+import { wait } from "@utils/utils"
 
 const printBannerWithShadow = (text: string) => {
     const BANNER_FONT = "ANSI Shadow"
@@ -28,15 +29,18 @@ const main = async () => {
         ]
     }) as "CLI" | "Telegram" | "Exit"
 
-    if (isCancel(mode || mode === "Exit")) {
+    if ((isCancel(mode) || mode === "Exit")) {
+        console.log(chalk.dim("Exiting..."))
         process.exit(0)
     }
 
     else if (mode === "CLI") {
+        console.log(chalk.green("Starting CLI mode..."))
+        await wait(500)
         await cli()
     }
 
-    else {
+    else if (mode === "Telegram") {
         console.log(chalk.red("Telegram mode is not implemented yet."))
     }
 }
